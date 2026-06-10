@@ -1,163 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#131b30,#da1f1f);
+      font-family:Arial, Helvetica, sans-serif;
+      color:white;
+    }
+
+    .container{
+      text-align:center;
+    }
+
+    h1{
+      font-size:3rem;
+      letter-spacing:4px;
+      margin-bottom:15px;
+    }
+
+    p{
+      color:#ffffff;
+      margin-bottom:35px;
+      letter-spacing:1px;
+    }
+
+
+    .loader{
+      width:80px;
+      height:80px;
+
+      border:8px solid rgba(80, 61, 61, 0.15);
+
+      border-top:8px solid #19adec;
+
+      border-radius:50%;
+
+      margin:auto;
+
+      animation:spin 1s linear infinite;
+    }
+
+    @keyframes spin{
+
+      from{
+        transform:rotate(0deg);
+      }
+
+      to{
+        transform:rotate(360deg);
+      }
+
+    }
+
+  
+
+    .progress{
+      width:260px;
+      height:10px;
+
+      background:rgba(232, 240, 250, 0.966);
+
+      border-radius:20px;
+
+      overflow:hidden;
+
+      margin:35px auto 15px;
+    }
+
+    .progress span{
+
+      display:block;
+
+      height:100%;
+
+      width:40%;
+
+      background:#00c8ecf8;
+
+      animation:loading 2s infinite;
+    }
+
+    @keyframes loading{
+
+      0%{
+        width:0%;
+      }
+
+      50%{
+        width:75%;
+      }
+
+      100%{
+        width:100%;
+      }
+
+    }
+
+    .small{
+      color:#ebf4ff;
+      font-size:.9rem;
+    }
+
+  </style>
+
 </head>
 
-<style>
-*{margin: 0;
-box-sizing: border-box;
-}
-body{
-    height:100vh;   
-    display: flex;
-    justify-content: center;
-align-items: center;
-flex-direction: column;
-background:
-linear-gradient(
-to bottom,
-white,
-rgb(245,248,255)
-);
-}
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-gap: 10px;
-    width: 100vw;
-}
-span{
-    padding-left: 10px;
-}
-    
-
-.div1,.div2,.div3{
-  width:12px;
-height:12px;
-    background-color: rgb(15, 76, 156);
-  border-radius: 50%;
-transform: translateY(10px);
-
-animation: upanddown 0.9s ease-in-out infinite;
-animation-direction: alternate;
-}
-.div2{
-    animation-delay:0.2s;
-}
-.div3{
-    animation-delay:0.5s;
-}
-
-@keyframes upanddown {
-   to{
-      
-    
-    transform: translateY(-10px);
-   opacity: 0.5;
-   transform: scale(1.15);;
- }
-
-
-}
-.container{
-  display:flex;
-justify-content:center;
-align-items:center;
-
-margin-top:50px;
-}
-.spinner{
-   height: 120px;
-   width: 120px;
-    background-color:transparent;
- border:8px solid gray;
-   border-top:8px solid rgb(37, 112, 186);
-
-border-radius:50%;
-box-shadow:0 0 10px blue ;
-
-animation: turn360deg 2s linear infinite;
-}
-@keyframes turn360deg {
-
-to {
-transform: rotate(360deg);
-box-shadow:0 0 15px blue ;
-
-}
-
-}
-
-.preparing,.your,.products{
-   animation: h1 4s ease-in-out infinite alternate;
-display:inline-block;/*عشان الscale تظبط */
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-text-indent: 5px;
-}
-.your{
-    animation-delay: 1.2s;
-}
-.products{
-    animation-delay: 2s;
-}
-@keyframes h1{
-0%{
-opacity:1;
-}
-
-100%{
-opacity:0.2;
-transform: rotate(2deg) ;
-filter: blur(2px); 
-text-shadow:0 0 20px blue;
-}
-}
-h1::after{
-content:"";
-position: relative;
-display:block;
-top: 20px;
-width:0%;
-height:3px;
-
-margin-top:15px;
-
-background:
-rgb(37,112,186);
-
-animation:
-line 3s ease-in-out infinite;
-}
-
-@keyframes line{
-
-50%{
-width:100%;
-}
-
-100%{
-width:0%;
-}
-
-}
-
-
-</style>
 <body>
-    <header><h1> <span class="preparing">Preparing</span> <span class="your"> your</span><span class="products"> products</span></h1>
-    <div class="div1"></div>
-    <div class="div2"></div>
-    <div class="div3"></div>
-    
-    </header>
-  <div class="container">  <div class="spinner">
 
-</div>
-    </div>
+  <div class="container">
+    <h1>Loading ...</h1>
+
+    <div class="loader"></div>
+    <div class="progress">
     
+        <span></span>
+    </div>
+    <div class="small">
+      Building something awesome...
+    </div>
+  </div>
+
 </body>
 </html>
